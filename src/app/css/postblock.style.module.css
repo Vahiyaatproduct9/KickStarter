@@ -1,0 +1,195 @@
+div.container {
+    background: white;
+    padding: 20px;
+
+    .container {
+        width: 100%;
+        height: fit-content;
+        background: red;
+    }
+
+    .postHead {
+        display: flex;
+        width: 100%;
+        padding: 20px;
+        align-items: center;
+        justify-content: space-between;
+
+        .userpfp {
+            position: relative;
+            height: 40px;
+            width: 40px;
+            overflow: hidden;
+            border-radius: 100%;
+            object-position: center;
+
+            img {
+                object-position: cover;
+                object-fit: cover;
+            }
+        }
+
+        .username {
+            font-size: 1.2rem;
+            color: rgb(40, 40, 40);
+            font-weight: 700;
+            font-family: Ancizar Sans;
+        }
+    }
+
+    .postContent {
+        display: flex;
+        flex-direction: column;
+
+        .postContentPicture {
+            overflow: hidden;
+            align-items: center;
+            justify-content: center;
+            display: flex;
+            flex-direction: column;
+
+            img {
+                border-radius: 20px;
+                max-height: 80vh;
+            }
+        }
+
+        .postContentCaption {
+            padding: 10px;
+            width: 100%;
+            font-weight: 600;
+            font-family: Open Sans;
+        }
+
+    }
+
+    .options {
+        padding: 0 10px;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: right;
+        gap: 20px;
+
+        form {
+            flex: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            .inputcomment {
+                background: pink;
+                padding: 10px;
+                font-size: 1.1rem;
+                border-radius: 10px;
+                flex-grow: 1;
+                font-weight: 600;
+                user-select: none;
+                outline-width: 0.3px;
+                outline-color: orchid;
+                outline-style: dotted;
+                transition: all 0.2s ease-in-out;
+            }
+
+            .actionComment {
+                margin: 10px;
+                height: 40px;
+                width: 40px;
+                font-weight: 900;
+                font-size: 1.4rem;
+                border-radius: 100%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                background: pink;
+                transition: all 0.1s;
+            }
+
+            .actionComment:hover {
+                box-shadow: 0 8px 14px 4px rgba(255, 192, 203, 0.6);
+                transform: translateY(-8px);
+            }
+        }
+
+        .postlike {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+
+            button {
+                font-size: 2rem;
+                display: flex;
+                align-items: center;
+                gap: 5px;
+                color: rgb(173, 173, 173);
+            }
+
+            span {
+                font-weight: 700;
+                font-family: Ancizar Sans;
+                color: black;
+                font-size: 1rem;
+            }
+        }
+
+        .postcomment {
+            font-size: 1.3rem;
+            display: flex;
+            align-items: center;
+            transition: all 0.1s;
+        }
+
+        .postcomment:active {
+            transform: scale(0.9);
+        }
+    }
+
+    .commentSection {
+        margin-top: 10px;
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+
+        .IndividualComment {
+            background: rgb(170, 170, 170);
+            border-radius: 20px;
+            width: 100%;
+
+            .IndividualCommentHeader {
+                width: 100%;
+                padding: 10px;
+                display: flex;
+                align-items: center;
+                justify-content: left;
+                gap: 10px;
+
+                .commentorpfp {
+                    height: 30px;
+                    width: 30px;
+                    object-fit: cover;
+                    overflow: hidden;
+                    border-radius: 100%;
+                    object-position: center;
+
+                    img {
+                        object-fit: cover;
+                        object-position: center;
+                        min-width: 100%;
+                        min-height: 100%;
+                    }
+                }
+
+                .Commentorname {
+                    font-weight: 700;
+                    font-family: Ancizar Sans;
+                    font-size: 1.2rem;
+                }
+            }
+
+            .commentBody {
+                font-weight: 500;
+                padding: 10px 50px;
+            }
+        }
+    }
+}

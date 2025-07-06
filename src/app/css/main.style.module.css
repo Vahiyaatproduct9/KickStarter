@@ -1,0 +1,34 @@
+.container {
+    padding-top: 80px;
+    background: red;
+    min-height: 100vh;
+    width: 900px;
+
+    @media (max-width: 900px) {
+        width: 100%;
+    }
+
+    >div.header {
+        height: 100%;
+        width: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: linear-gradient(72deg, #44291A, #A15C48, #F7D6CF);
+        padding: 40px;
+        overflow: hidden;
+
+        >h1 {
+            position: absolute;
+            left: auto;
+            letter-spacing: 6px;
+            color: rgb(150, 0, 0);
+            font-family: Ancizar Sans;
+            font-weight: 900;
+            font-size: 2rem;
+        }
+    }
+}

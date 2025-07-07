@@ -6,10 +6,9 @@ import css from './css/main.style.module.css'
 import PostBlock from './postblock'
 import { sampleData } from './data/sampledata'
 import GETPosts from '../api/GETPosts'
-type Post = typeof sampleData[number];
 
 function MainPage() {
-    const [posts, setPosts] = useState<Post[]>([])
+    const [posts, setPosts] = useState<any>([])
     useEffect(() => {
         const fetchPosts = async () => {
             const { newData, error } = await GETPosts('tech')
@@ -18,7 +17,18 @@ function MainPage() {
         }
         fetchPosts()
     }, [])
-    const Postblocks = posts.map((post, index) => (
+    const Postblocks = posts.map((post: {
+        user_id: string
+        uploaderPfpPath: string
+        caption: string
+        likes: number
+        comments: {
+            user_id: string
+            pfpPath: string
+            comment: string
+        }[]
+        filePath: string
+    }, index: number) => (
         <PostBlock key={index}
             user_id={post.user_id}
             uploaderPfpPath={post.uploaderPfpPath}

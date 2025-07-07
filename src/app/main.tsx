@@ -29,13 +29,7 @@ function MainPage() {
         }[]
         filePath: string
     }, index: number) => (
-        <PostBlock key={index}
-            user_id={post.user_id}
-            uploaderPfpPath={post.uploaderPfpPath}
-            caption={post.caption}
-            likes={post.likes}
-            comments={post.comments}
-            filePath={post.filePath} />
+        <PostBlock key={index} {...post} />
     ))
     return (
         <motion.div variants={maincontainer} initial='entry' animate='animate' exit='exit' className={css.container}>

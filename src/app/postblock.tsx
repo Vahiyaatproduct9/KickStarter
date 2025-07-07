@@ -2,7 +2,6 @@
 import React, { useState } from 'react'
 import css from './css/postblock.style.module.css'
 
-// ⬇️ Move this OUTSIDE so it doesn't remount on every render
 interface CommentInputProps {
     comment: string
     handleCommentChange: (e: React.ChangeEvent<HTMLInputElement>) => void
@@ -59,14 +58,14 @@ const CommentSection: React.FC<CommentSectionProps> = ({ comments }) => {
 }
 
 function PostBlock(props: {
-    username: string
-    userpfp: string
-    post: string
+    user_id: string
+    uploaderPfpPath: string
+    filePath: string
     caption: string
     likes: number
     comments: {
-        userpfp: string
-        username: string
+        user_id: string
+        pfpPath: string
         comment: string
     }[]
 }) {
@@ -82,17 +81,17 @@ function PostBlock(props: {
             {/* This is the Head part of the post */}
             <div className={css.postHead}>
                 <div className={css.userpfp}>
-                    <img src={props.userpfp} />
+                    <img src={props.uploaderPfpPath} />
                 </div>
                 <div className={css.username}>
-                    <span>{props.username}</span>
+                    <span>{props.user_id}</span>
                 </div>
             </div>
 
             {/* This is the body of the post */}
             <div className={css.postContent}>
                 <div className={css.postContentPicture}>
-                    <img src={props.post} />
+                    <img src={props.filePath} />
                 </div>
                 <div className={css.postContentCaption}>
                     <p>{props.caption}</p>
@@ -103,9 +102,8 @@ function PostBlock(props: {
             <div className={css.options}>
                 <div className={css.postlike}>
                     <button>&hearts;</button>
-                    <span>{props.likes}</span>
+                    {showComments ? null : <span>{props.likes}</span>}
                 </div>
-
                 {showComments && (
                     <CommentInput
                         comment={comment}
@@ -121,7 +119,15 @@ function PostBlock(props: {
                 </button>
             </div>
 
-            {showComments && <CommentSection comments={props.comments} />}
+            {showComments && (
+                <CommentSection
+                    comments={props.comments.map(c => ({
+                        userpfp: c.pfpPath,
+                        username: c.user_id,
+                        comment: c.comment,
+                    }))}
+                />
+            )}
         </div>
     )
 }

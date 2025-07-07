@@ -5,7 +5,6 @@ div.container {
     .container {
         width: 100%;
         height: fit-content;
-        background: red;
     }
 
     .postHead {
@@ -72,19 +71,21 @@ div.container {
         gap: 20px;
 
         form {
-            flex: 1;
+            flex-grow: 1;
+            flex-shrink: 1;
             display: flex;
             align-items: center;
-            justify-content: center;
+            justify-content: space-between;
 
             .inputcomment {
                 background: pink;
                 padding: 10px;
+                min-width: 100px;
                 font-size: 1.1rem;
                 border-radius: 10px;
                 flex-grow: 1;
+                flex-shrink: 1;
                 font-weight: 600;
-                user-select: none;
                 outline-width: 0.3px;
                 outline-color: orchid;
                 outline-style: dotted;
@@ -92,7 +93,7 @@ div.container {
             }
 
             .actionComment {
-                margin: 10px;
+                margin: 0 5px;
                 height: 40px;
                 width: 40px;
                 font-weight: 900;
@@ -106,8 +107,12 @@ div.container {
             }
 
             .actionComment:hover {
-                box-shadow: 0 8px 14px 4px rgba(255, 192, 203, 0.6);
+                box-shadow: 0 8px 12px 4px rgba(255, 192, 203, 0.6);
                 transform: translateY(-8px);
+            }
+
+            .actionComment:active {
+                transform: scale(0.9);
             }
         }
 

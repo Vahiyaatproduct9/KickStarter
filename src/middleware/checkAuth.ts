@@ -4,8 +4,15 @@ export async function SignUpLogic(email: string, username: string, pass: string,
     if (pass !== pass2) {
         return { message: 'passwords do not match', success: false }
     }
-    const { data, error } = await signUp(email, username, pass)
-    return { data, error }
+    const result = await signUp(email, username, pass)
+    if (typeof result === 'string' || result instanceof Error) {
+        return { data: null, error: result, success: false }
+    }
+    const { data, error } = result
+    if (!error) {
+        return { data, error, success: true }
+    }
+    return { data, error, success: false }
 }
 
 export async function LoginLogic(email: string, password: string) {

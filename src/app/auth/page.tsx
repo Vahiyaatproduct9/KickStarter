@@ -37,7 +37,7 @@ function Auth() {
                 window.alert('sign Up successful')
                 router.push('/')
             } else {
-                alert(`Sign Up failed: ${error.message || error}`)
+                alert(`Sign Up failed: ${error}`)
             }
         }
     }

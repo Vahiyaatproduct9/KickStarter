@@ -27,7 +27,7 @@ export const mainheadertext = {
     },
     animate: {
         left: '40px',
-        y: 10,
+        y: 0,
         textShadow: '0 0px 0 #F7D6CF',
         color: 'white'
     }

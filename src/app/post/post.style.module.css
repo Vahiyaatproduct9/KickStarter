@@ -1,0 +1,345 @@
+.background {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    left: 0;
+    top: 0;
+    backdrop-filter: blur(10px) contrast(0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    z-index: 1;
+
+
+    .container {
+        padding: 10px;
+        background: whitesmoke;
+        max-width: 800px;
+        border-radius: 20px;
+
+        .title {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+
+            .head {
+                width: 100%;
+                text-align: left;
+                font-weight: 700;
+                font-size: 1.7rem;
+                font-family: Ancizar Sans;
+            }
+
+            .notice {
+                font-weight: 500;
+                font-size: 0.8rem;
+                color: rgb(40, 40, 40);
+                font-family: Open Sans;
+            }
+        }
+
+        form {
+            width: 100%;
+            display: flex;
+            flex-wrap: wrap;
+
+        }
+
+        @media (max-width: 768px) {
+            width: 100%;
+        }
+
+        .image {
+            border-radius: 10px;
+            width: 50%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            flex-grow: 1;
+
+            @media (max-width: 768px) {
+                width: 100%
+            }
+
+            .uploadDiv {
+                height: 100%;
+                width: 100%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                flex-direction: column;
+                padding: 10px;
+                border-radius: 10px;
+
+                button {
+                    padding: 10px 20px;
+                    background: orange;
+                    color: white;
+                    font-size: 1.2rem;
+                    font-weight: 600;
+                    font-family: Open Sans;
+                    border-radius: 10px;
+                    cursor: pointer;
+                    transition: all 0.1s;
+                }
+
+                button:hover {
+                    box-shadow: 0 6px 14px 2px rgba(255, 166, 0, 0.6);
+                    transform: translateY(-6px);
+                }
+
+                button:active {
+                    box-shadow: none;
+                    transform: scale(0.9);
+                }
+
+                p {
+                    font-weight: 600;
+                    font-size: 1.2rem;
+                    color: rgb(70, 70, 70);
+                    font-family: Ancizar Sans;
+                }
+            }
+
+            .changeImage {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                width: 100%;
+                flex-grow: 1;
+                padding: 10px;
+
+                button {
+                    cursor: pointer;
+                    padding: 10px 20px;
+                    background: orange;
+                    border-radius: 10px;
+                    font-weight: 600;
+                    font-size: 1rem;
+                    font-family: Open Sans;
+                    color: white;
+                    transition: all 0.1s;
+                }
+
+                button:hover {
+                    transform: translateY(-6px);
+                    box-shadow: 0 6px 14px 2px rgba(255, 166, 0, 0.6);
+                }
+
+                button:active {
+                    box-shadow: none;
+                    transform: scale(0.9);
+                }
+            }
+
+            img {
+                border-radius: 10px;
+            }
+        }
+
+        .bodyContainer {
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: space-between;
+
+            .preview {
+                flex-grow: 1;
+                width: 100%;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+
+                @media (max-width: 768px) {
+                    display: none;
+                }
+
+                .previewPostBlockContainer {
+                    box-shadow: 0 5px 14px 0px rgba(255, 165, 0, 0.6);
+                    background: white;
+                    border-radius: 10px;
+                    margin: 3px;
+                    height: fit-content;
+                    max-height: 100%;
+                    width: 100%;
+                    min-width: 300px;
+
+                    scale: 1;
+                    overflow: hidden;
+
+
+                    .postHead {
+                        margin: 0;
+                        display: flex;
+                        width: 100%;
+                        padding: 10px;
+                        align-items: center;
+                        justify-content: space-between;
+
+                        .userpfp {
+                            position: relative;
+                            height: 1.2rem;
+                            width: 1.2rem;
+                            overflow: hidden;
+                            border-radius: 100%;
+                            object-position: center;
+
+                            img {
+                                object-position: cover;
+                                object-fit: cover;
+                            }
+                        }
+
+                        .username {
+                            font-size: 0.8rem;
+                            color: rgb(40, 40, 40);
+                            font-weight: 700;
+                            font-family: Ancizar Sans;
+                        }
+
+                    }
+
+                    .postContent {
+
+                        .postContentPicture {
+                            display: flex;
+                            align-items: center;
+                            justify-content: center;
+
+
+                            img {
+                                border-radius: 7px;
+                                max-height: 20rem;
+                                max-width: 20rem;
+                            }
+                        }
+
+                        .postContentCaption {
+                            padding: 0 1rem;
+                            max-width: 100%;
+                            font-size: 0.8rem;
+                            font-family: Ancizar Sans;
+                            font-weight: 600;
+
+                            p {
+                                height: fit-content;
+                                max-width: 350px;
+                                width: fit-content;
+                                word-break: break-all;
+                                word-wrap: break-word;
+                                white-space: pre-wrap;
+                            }
+                        }
+                    }
+
+                    .options {
+                        padding: 5px;
+                        display: flex;
+                        flex-direction: row;
+                        align-items: center;
+                        justify-content: right;
+                        gap: 10px;
+                        font-size: 0.8rem;
+                    }
+                }
+            }
+
+            .options {
+                display: flex;
+                flex-wrap: wrap;
+                align-items: center;
+                justify-content: space-between;
+                padding: 10px 5px;
+                width: 100%;
+                gap: 5px;
+
+                .captions {
+                    flex-grow: 1;
+
+                    textarea {
+                        border-radius: 10px;
+                        outline-style: dashed;
+                        outline-width: 1px;
+                        outline-color: orange;
+                        padding: 10px;
+                        width: 100%;
+                        font-weight: 600;
+                        font-size: 1rem;
+                        font-family: Open Sans;
+                        overflow-y: auto;
+                        /* scroll when content overflows vertically */
+                        overflow-x: hidden;
+                        resize: none;
+                    }
+                }
+
+                .category {
+                    flex-grow: 1;
+
+                    >select {
+                        padding: 10px;
+                        color: white;
+                        border-radius: 10px;
+                        background: rgba(255, 166, 0, 1);
+                        width: 100%;
+                        transition: all 0.1s;
+                        outline-width: 0;
+                        font-weight: 600;
+                        font-family: Ancizar Sans;
+                        font-size: 1.2rem;
+
+                        option {
+                            border-radius: 10px;
+                        }
+                    }
+
+                    >select:hover {
+                        transform: translateY(-6px);
+                        box-shadow: 0 6px 14px 2px rgba(255, 166, 0, 0.6);
+                    }
+
+                    >select:active {
+                        transition: all 0.05s;
+                        transform: none;
+                        box-shadow: none;
+                    }
+                }
+            }
+
+            .actionPost {
+                width: 100%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+
+                button {
+                    cursor: pointer;
+                    width: calc(100% - 10px);
+                    padding: 10px;
+                    background: orange;
+                    font-weight: 700;
+                    font-family: Ancizar Sans;
+                    font-size: 1.2rem;
+                    color: white;
+                    border-radius: 10px;
+
+                }
+            }
+        }
+    }
+}
+
+@keyframes fade {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}

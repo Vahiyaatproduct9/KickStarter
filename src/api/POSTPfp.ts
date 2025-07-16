@@ -1,4 +1,4 @@
-import { supabase } from '../lib/supabaseAdmin'
+import { supabase } from '../lib/supabaseClient'
 export default async function (file: File) {
     const { data, error } = await supabase.storage
         .from('user_pfp')

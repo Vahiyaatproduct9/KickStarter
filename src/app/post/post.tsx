@@ -120,6 +120,7 @@ function Post(props: { setIsPostVisible: (visible: boolean) => void }) {
                                     <option value='fashion'>Fashion</option>
                                     <option value='design'>Design</option>
                                     <option value='art'>Art</option>
+                                    <option value='diy'>DIY</option>
                                 </select>
                             </div>
                         </div>

@@ -20,12 +20,8 @@ div.container {
             width: 40px;
             overflow: hidden;
             border-radius: 100%;
-            object-position: center;
-
-            img {
-                object-position: cover;
-                object-fit: cover;
-            }
+            background-size: cover;
+            background-position: center;
         }
 
         .username {
@@ -70,7 +66,7 @@ div.container {
         justify-content: right;
         gap: 20px;
 
-        form {
+        >div.commentForm {
             flex-grow: 1;
             flex-shrink: 1;
             display: flex;

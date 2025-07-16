@@ -6,6 +6,7 @@
 
     @media (max-width: 900px) {
         width: 100%;
+        padding-top: 60px;
     }
 
     >div.header {
@@ -21,21 +22,34 @@
         padding: 40px;
         overflow: hidden;
 
-        .addPost {
+        @media (max-width: 768) {
+            padding: 30px 20px;
+        }
+
+        button {
             position: absolute;
             right: 1.3rem;
             top: auto;
             display: flex;
             align-items: center;
             justify-content: center;
-            border-radius: 100%;
-            height: 50px;
-            width: 50px;
+            border-radius: 50px;
             font-size: 1.2rem;
             font-family: Open Sans;
             font-weight: 900;
+            overflow: hidden;
             color: white;
+            padding: 0;
             background: orange;
+        }
+
+        .addPost {
+            height: 35px;
+            width: 35px;
+        }
+
+        .link {
+            padding: 10px 20px;
         }
 
         >h1 {
@@ -46,6 +60,11 @@
             font-family: Ancizar Sans;
             font-weight: 900;
             font-size: 2rem;
+
+            @media (max-width: 768) {
+                font-size: 1.5rem;
+            }
         }
     }
+
 }

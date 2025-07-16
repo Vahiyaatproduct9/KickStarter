@@ -1,0 +1,15 @@
+.EmptyContainer {
+    position: relative;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: Ancizar Sans;
+    color: rgb(100, 100, 100);
+    padding: 100px 0;
+    font-size: 2rem;
+    flex-direction: column;
+    font-weight: 600;
+}

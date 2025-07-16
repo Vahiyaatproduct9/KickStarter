@@ -12,12 +12,23 @@ if (!supabaseUrl) {
 if (!supabaseKey) {
     throw new Error('Missing environment variable: NEXT_PUBLIC_SUPABASE_ANON_KEY')
 }
-const supabase = createClient(supabaseUrl, supabaseAdminKey)
+const supabase = createClient(supabaseUrl, supabaseKey)
+export async function seeComment(post_id) {
+    const { data, error } = await supabase.from('comments').select().eq('post_id', post_id)
+    const commentIds = data ? [...new Set(data.map(item => item.user_id))] : [];
+    const { data: pfpData, error: pfpError } = await supabase
+        .from('users')
+        .select('user_id, pfpPath')
+        .in('user_id', commentIds)
 
-const { data, error } = await supabase.auth.admin.updateUserById('47d37a91-d8f0-497b-896c-20e1b07ead92', {
-
-    user_metadata: {
-        user_id: 'kishor_dih'
-    }
-});
-console.log(data)
+    const pfpLookup = Object.fromEntries((pfpData ?? []).map(user => [user.user_id, user.pfpPath]))
+    const newData = data?.map((item) => {
+        return {
+            ...item,
+            pfpPath: pfpLookup[item.user_id] || null
+        }
+    })
+    if (error || !data) return error
+    return newData
+}
+console.log(await seeComment('1'))

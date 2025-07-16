@@ -7,7 +7,7 @@ div.container {
     display: flex;
     align-items: center;
     justify-content: center;
-    background: linear-gradient(72deg, #44291A, #A15C48, #F7D6CF);
+    background: orange;
 
     h1 {
         letter-spacing: 6px;

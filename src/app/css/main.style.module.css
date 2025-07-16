@@ -18,7 +18,7 @@
         display: flex;
         align-items: center;
         justify-content: center;
-        background: linear-gradient(72deg, #44291A, #A15C48, #F7D6CF);
+        background: orange;
         padding: 40px;
         overflow: hidden;
 
@@ -38,9 +38,9 @@
             font-family: Open Sans;
             font-weight: 900;
             overflow: hidden;
-            color: white;
+            color: orange;
             padding: 0;
-            background: orange;
+            background: white;
         }
 
         .addPost {
